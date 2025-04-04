@@ -27,11 +27,10 @@ You can return the answer in any order.
 var twoSum = function (nums, target) {
   let map = new Map();
   for (let index = 0; index < nums.length; index++) {
-    console.log(index + 1, map.get(target - nums[index]));
-    if (map.get(target - nums[index]) === undefined) {
+    let inverted = target - nums[index];
+    if (map.get(inverted) === undefined) {
       map.set(nums[index], index);
-      console.log(map);
-    } else return [index, map.get(target - nums[index])];
+    } else return [index, map.get(inverted)];
   }
 };
 
