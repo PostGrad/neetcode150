@@ -31,6 +31,8 @@
 // };
 
 var groupAnagrams = function (strs) {
+  if (strs.length === 0) return [];
+
   const hashMap = new Map();
 
   for (const str of strs) {

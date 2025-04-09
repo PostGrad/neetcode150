@@ -15,10 +15,13 @@ Given an array of strings strs, group the anagrams together. You can return the 
 
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        if not strs:
+            return []
+        
         map={}
         for s in strs:
             key = ''.join(sorted(s))
             map.setdefault(key, []).append(s)
         return list(map.values())
 
-print(Solution().groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(Solution().groupAnagrams([""]))
